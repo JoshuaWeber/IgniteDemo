@@ -4,6 +4,7 @@ using System.Linq;
 
 using Foundation;
 using UIKit;
+using HockeyApp.iOS;
 
 namespace IgniteDemo.iOS
 {
@@ -19,7 +20,14 @@ namespace IgniteDemo.iOS
 			Xamarin.Calabash.Start();
 #endif
 
+			var manager = BITHockeyManager.SharedHockeyManager;
+			manager.Configure("$fb44b2bf8fce44318d3f9ae6e6f67af9");
+			manager.StartManager();
+			//manager.Authenticator.AuthenticateInstallation(); // This line is obsolete in crash only builds
+
+
 			LoadApplication(new App());
+
 
 			return base.FinishedLaunching(app, options);
 		}

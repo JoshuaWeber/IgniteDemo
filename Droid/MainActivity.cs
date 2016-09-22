@@ -7,6 +7,8 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.OS;
+using HockeyApp.Android;
+using HockeyApp.Android.Metrics;
 
 namespace IgniteDemo.Droid
 {
@@ -21,6 +23,9 @@ namespace IgniteDemo.Droid
 			base.OnCreate(bundle);
 
 			global::Xamarin.Forms.Forms.Init(this, bundle);
+
+			CrashManager.Register(this, "37ba9472034144b8bfbf5bb5940391b7");
+			MetricsManager.Register(Application, "37ba9472034144b8bfbf5bb5940391b7");
 
 			LoadApplication(new App());
 		}
