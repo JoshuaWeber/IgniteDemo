@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage 
+		xmlns="http://xamarin.com/schemas/2014/forms" 
+		xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+		x:Class="IgniteDemo.BMWQuestionPage">
+	<ContentPage.Content>
+		<StackLayout BackgroundColor="#D83B01" VerticalOptions="Start">
+			<Label HeightRequest="50" Margin="0, 20" VerticalOptions="Center" HorizontalOptions="Center" TextColor="White" FontSize="22">
+				Please select the best car.</Label>
+			<ListView x:Name="listView" BackgroundColor="#D83B01" VerticalOptions="FillAndExpand" RowHeight="120">
+				<ListView.ItemTemplate>
+					<DataTemplate >
+						<ViewCell>
+							<StackLayout Margin="5, 5" Orientation="Horizontal" >
+								<Image Margin="15, 5" Source="{Binding PhotoSource}" WidthRequest="120" HeightRequest="120" />
+								<Label Text="{Binding Name}" VerticalOptions="Center" TextColor="White" />
+							</StackLayout>
+						</ViewCell>
+					</DataTemplate>
+				</ListView.ItemTemplate>
+			</ListView>
+			<StackLayout Orientation="Horizontal" HeightRequest="50">
+				<Button x:Name="btnCancel" Margin="10, 10" WidthRequest="80" TextColor="White" HorizontalOptions="EndAndExpand" BackgroundColor="#0078d7" Text="Cancel" />
+				<Button x:Name="btnNext" Margin="10, 10" WidthRequest="80" TextColor="White" HorizontalOptions="End" BackgroundColor="#0078d7" Text="Next" />
+			</StackLayout>
+		</StackLayout>
+	</ContentPage.Content>
+</ContentPage>

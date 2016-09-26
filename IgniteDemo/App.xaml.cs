@@ -8,7 +8,8 @@ namespace IgniteDemo
 		{
 			InitializeComponent();
 
-			MainPage = new IgniteDemoPage();
+			//MainPage = new IgniteDemoPage();
+			MainPage = new NavigationPage(new IgniteDemoPage());
 		}
 
 		protected override void OnStart()

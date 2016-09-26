@@ -8,5 +8,20 @@ namespace IgniteDemo
 		{
 			InitializeComponent();
 		}
+
+		protected override void OnAppearing()
+		{
+			base.OnAppearing();
+
+			TapGestureRecognizer tgr = new TapGestureRecognizer();
+			tgr.Tapped += async (sender, e) =>
+			{
+				await Navigation.PushAsync(new BMWQuestionPage());
+			};
+
+			this.Content.GestureRecognizers.Add(tgr);
+
+			//Content.FindByName<StackLayout> ("stackContainer").clicked
+		}
 	}
 }
