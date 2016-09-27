@@ -49,8 +49,18 @@ namespace IgniteDemo
 				eventName += item.Name;
 				HockeyApp.MetricsManager.TrackEvent(eventName);
 
+				if (item.Name == "2005 Mercedes E55 AMG")
+				{
+					DonovanWouldntDriveThat();
+				}
+
 				await Navigation.PushAsync(new HockeyQuestionPage(passBtn));
 			};
+		}
+
+		protected void DonovanWouldntDriveThat()
+		{
+			throw new Exception("Car doesn't support Donovan");
 		}
 	}
 }
