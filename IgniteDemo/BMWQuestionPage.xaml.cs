@@ -60,7 +60,7 @@ namespace IgniteDemo
 
 		protected void DonovanWouldntDriveThat()
 		{
-			throw new Exception("Car doesn't support Donovan");
+			throw new Exception("Donovan Wouldn't Drive That");
 		}
 	}
 }
