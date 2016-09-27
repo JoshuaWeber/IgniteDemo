@@ -34,15 +34,25 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Include="Images\image_120.png" />
-    <EmbeddedResource Include="Images\image_40.png" />
-    <EmbeddedResource Include="Images\01_bmw_m3.jpg" />
-    <EmbeddedResource Include="Images\05_bmw_k1200.jpg" />
-    <EmbeddedResource Include="Images\05_mercedes_e55.jpg" />
-    <EmbeddedResource Include="Images\06_bmw_x5.jpg" />
-    <EmbeddedResource Include="Images\97_bmw_840.jpg" />
-    <EmbeddedResource Include="Images\97_bmw_m3.jpg" />
-    <EmbeddedResource Include="Images\1993_bmw_m5.jpg" />
-    <EmbeddedResource Include="Images\01_bmw_740.jpg" />
+    <EmbeddedResource Include="HockeyQuestionPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Images\Teams\Bruins.png" />
+    <EmbeddedResource Include="Images\Teams\Canadiens.png" />
+    <EmbeddedResource Include="Images\Teams\Lightning.png" />
+    <EmbeddedResource Include="Images\Teams\Maple Leafs.png" />
+    <EmbeddedResource Include="Images\Teams\Panthers.png" />
+    <EmbeddedResource Include="Images\Teams\Redwings.png" />
+    <EmbeddedResource Include="Images\Teams\Sabres.png" />
+    <EmbeddedResource Include="Images\Teams\Senators.png" />
+    <EmbeddedResource Include="Images\Cars\01_bmw_740.jpg" />
+    <EmbeddedResource Include="Images\Cars\01_bmw_m3.jpg" />
+    <EmbeddedResource Include="Images\Cars\05_bmw_k1200.jpg" />
+    <EmbeddedResource Include="Images\Cars\05_mercedes_e55.jpg" />
+    <EmbeddedResource Include="Images\Cars\06_bmw_x5.jpg" />
+    <EmbeddedResource Include="Images\Cars\1993_bmw_m5.jpg" />
+    <EmbeddedResource Include="Images\Cars\97_bmw_840.jpg" />
+    <EmbeddedResource Include="Images\Cars\97_bmw_m3.jpg" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App.xaml.cs">
@@ -56,6 +66,10 @@
       <DependentUpon>BMWQuestionPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Models\Car.cs" />
+    <Compile Include="HockeyQuestionPage.xaml.cs">
+      <DependentUpon>HockeyQuestionPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Team.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Xamarin.Forms.Core">
@@ -67,6 +81,9 @@
     <Reference Include="Xamarin.Forms.Xaml">
       <HintPath>..\packages\Xamarin.Forms.2.3.1.114\lib\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.Xaml.dll</HintPath>
     </Reference>
+    <Reference Include="HockeySDK">
+      <HintPath>..\packages\HockeySDK.Xamarin.4.1.0\lib\portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10\HockeySDK.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -74,6 +91,8 @@
   <ItemGroup>
     <Folder Include="Images\" />
     <Folder Include="Models\" />
+    <Folder Include="Images\Teams\" />
+    <Folder Include="Images\Cars\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Import Project="..\packages\Xamarin.Forms.2.3.1.114\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.2.3.1.114\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets')" />

@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ContentPage 
-		xmlns="http://xamarin.com/schemas/2014/forms" 
-		xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
-		x:Class="IgniteDemo.BMWQuestionPage">
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="IgniteDemo.HockeyQuestionPage">
 	<ContentPage.Content>
 		<StackLayout BackgroundColor="#D83B01" VerticalOptions="Start">
 			<Label HeightRequest="50" Margin="0, 20" VerticalOptions="Center" HorizontalOptions="Center" TextColor="White" FontSize="22">
-				Please select the best car.</Label>
+				Please select the best Hockey team.</Label>
 			<ListView x:Name="listView" BackgroundColor="#D83B01" VerticalOptions="FillAndExpand" RowHeight="120">
 				<ListView.ItemTemplate>
 					<DataTemplate >
@@ -19,7 +16,7 @@
 					</DataTemplate>
 				</ListView.ItemTemplate>
 			</ListView>
-			<StackLayout x:Name="stkBottom" Orientation="Horizontal" HeightRequest="50">
+			<StackLayout Orientation="Horizontal" HeightRequest="50">
 				<Button x:Name="btnCancel" Margin="10, 10" WidthRequest="80" TextColor="White" HorizontalOptions="EndAndExpand" BackgroundColor="#0078d7" Text="Cancel" />
 				<Button x:Name="btnNext" Margin="10, 10" WidthRequest="80" TextColor="White" HorizontalOptions="End" BackgroundColor="#0078d7" Text="Next" />
 			</StackLayout>

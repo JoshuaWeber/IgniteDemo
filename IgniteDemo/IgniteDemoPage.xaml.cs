@@ -4,8 +4,10 @@ namespace IgniteDemo
 {
 	public partial class IgniteDemoPage : ContentPage
 	{
-		public IgniteDemoPage()
+		View[] feedbackBtns;
+		public IgniteDemoPage(params View[] children)
 		{
+			feedbackBtns = children;
 			InitializeComponent();
 		}
 
@@ -16,7 +18,7 @@ namespace IgniteDemo
 			TapGestureRecognizer tgr = new TapGestureRecognizer();
 			tgr.Tapped += async (sender, e) =>
 			{
-				await Navigation.PushAsync(new BMWQuestionPage());
+				await Navigation.PushAsync(new BMWQuestionPage(feedbackBtns));
 			};
 
 			this.Content.GestureRecognizers.Add(tgr);
