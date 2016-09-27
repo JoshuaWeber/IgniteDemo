@@ -40,7 +40,7 @@ namespace IgniteDemo.iOS
 			btnFeedback.Clicked += (sender, e) =>
 			{
 				var feedbackManager = BITHockeyManager.SharedHockeyManager.FeedbackManager;
-				feedbackManager.ShowFeedbackComposeView();
+				feedbackManager.ShowFeedbackComposeViewWithGeneratedScreenshot();
 			};
 
 

@@ -7,9 +7,11 @@ namespace IgniteDemo
 {
 	public partial class HockeyQuestionPage : ContentPage
 	{
-		public HockeyQuestionPage()
+		public HockeyQuestionPage(params View[] feedbackBtn)
 		{
 			InitializeComponent();
+
+			stkBottom.Children.Insert(0, feedbackBtn[0]);
 		}
 
 		protected override void OnAppearing()
@@ -40,7 +42,7 @@ namespace IgniteDemo
 				eventName += item.Name;
 				HockeyApp.MetricsManager.TrackEvent(eventName);
 
-				await Navigation.PushAsync(new HockeyQuestionPage());
+				await Navigation.PushAsync(new IgniteDemoPage());
 			};
 		}
 	}

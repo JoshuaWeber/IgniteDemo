@@ -16,7 +16,7 @@
 					</DataTemplate>
 				</ListView.ItemTemplate>
 			</ListView>
-			<StackLayout Orientation="Horizontal" HeightRequest="50">
+			<StackLayout x:Name="stkBottom" Orientation="Horizontal" HeightRequest="50">
 				<Button x:Name="btnCancel" Margin="10, 10" WidthRequest="80" TextColor="White" HorizontalOptions="EndAndExpand" BackgroundColor="#0078d7" Text="Cancel" />
 				<Button x:Name="btnNext" Margin="10, 10" WidthRequest="80" TextColor="White" HorizontalOptions="End" BackgroundColor="#0078d7" Text="Next" />
 			</StackLayout>
