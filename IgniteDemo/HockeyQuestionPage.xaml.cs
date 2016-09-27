@@ -11,7 +11,7 @@ namespace IgniteDemo
 		{
 			InitializeComponent();
 
-			Device.OnPlatform(() =>
+			Device.OnPlatform(iOS: () =>
 			{
 				stkBottom.Children.Insert(0, feedbackBtn[0]);
 			});

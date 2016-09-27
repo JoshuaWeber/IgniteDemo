@@ -9,12 +9,18 @@ namespace IgniteDemo
 	public partial class BMWQuestionPage : ContentPage
 	{
 		View[] passBtn;
+
 		public BMWQuestionPage(params View[] feedbackBtn)
 		{
 			InitializeComponent();
 
 			passBtn = feedbackBtn;
-			stkBottom.Children.Insert(0, feedbackBtn[0]);
+
+			Device.OnPlatform(iOS: () =>
+			{
+				stkBottom.Children.Insert(0, feedbackBtn[0]);
+			});
+
 		}
 
 		protected override void OnAppearing()
