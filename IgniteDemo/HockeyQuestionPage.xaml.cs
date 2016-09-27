@@ -11,7 +11,10 @@ namespace IgniteDemo
 		{
 			InitializeComponent();
 
-			stkBottom.Children.Insert(0, feedbackBtn[0]);
+			Device.OnPlatform(() =>
+			{
+				stkBottom.Children.Insert(0, feedbackBtn[0]);
+			});
 		}
 
 		protected override void OnAppearing()
