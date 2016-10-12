@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:IgniteDemo" x:Class="IgniteDemo.IgniteDemoPage">
 	<Grid BackgroundColor="#D83B01">
 	<StackLayout VerticalOptions="Center" Spacing="40" >
-		<Label Text="Welcome to Ignite!" TextColor="White" VerticalOptions="Center" HorizontalOptions="Center" />
+		<Label Text="Welcome to Tech Summit Taipei!" TextColor="White" VerticalOptions="Center" HorizontalOptions="Center" />
 		<Label Text="BRK 3078" TextColor="White" VerticalOptions="Center" HorizontalOptions="Center" />
 	</StackLayout>
 	</Grid>

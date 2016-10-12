@@ -27,16 +27,16 @@ namespace IgniteDemo
 		{
 			base.OnAppearing();
 
-			var cars = new List<Car>();
-			cars.Add(new Car() { Name = "1993 BMW M5", PhotoResource="IgniteDemo.Images.Cars.1993_bmw_m5.jpg" });
-			cars.Add(new Car() { Name = "1997 BMW M3", PhotoResource = "IgniteDemo.Images.Cars.97_bmw_m3.jpg" });
-			cars.Add(new Car() { Name = "1997 BMW 840 CI", PhotoResource = "IgniteDemo.Images.Cars.97_bmw_840.jpg" });
-			cars.Add(new Car() { Name = "2001 BMW M3", PhotoResource = "IgniteDemo.Images.Cars.01_bmw_m3.jpg" });
-			cars.Add(new Car() { Name = "2001 BMW 740 i Sport", PhotoResource = "IgniteDemo.Images.Cars.01_bmw_740.jpg" });
-			cars.Add(new Car() { Name = "2005 BMW K 1200 S", PhotoResource = "IgniteDemo.Images.Cars.05_bmw_k1200.jpg" });
-			cars.Add(new Car() { Name = "2006 BMW X5", PhotoResource = "IgniteDemo.Images.Cars.06_bmw_x5.jpg" });
-			cars.Add(new Car() { Name = "2005 Mercedes E55 AMG", PhotoResource = "IgniteDemo.Images.Cars.05_mercedes_e55.jpg" });
-			listView.ItemsSource = cars;
+			var destinations = new List<Destination>();
+			destinations.Add(new Destination() { Name = "象山 (Elephant Mountain)", PhotoResource="IgniteDemo.Images.Destinations.Elephant_Mountain.png" });
+			destinations.Add(new Destination() { Name = "貓空纜車 (Maokong Gondola)", PhotoResource = "IgniteDemo.Images.Destinations.Maokong.png" });
+			destinations.Add(new Destination() { Name = "艋舺龍山寺 (Lungshan Temple)", PhotoResource = "IgniteDemo.Images.Destinations.Lungshan.png" });
+			destinations.Add(new Destination() { Name = "中正紀念堂 (Chiang Kai-shek Memorial Hall)", PhotoResource = "IgniteDemo.Images.Destinations.Chiang_Kai-shek.png" });
+			destinations.Add(new Destination() { Name = "國立故宮博物院 (National Palace Museum)", PhotoResource = "IgniteDemo.Images.Destinations.National_Palace.png" });
+			destinations.Add(new Destination() { Name = "臺北101 (Taipei 101)", PhotoResource = "IgniteDemo.Images.Taipei_101.png" });
+			destinations.Add(new Destination() { Name = "臺北市立動物園 (Taipei Zoo)", PhotoResource = "IgniteDemo.Images.Destinations.Taipei_Zoo.png" });
+			destinations.Add(new Destination() { Name = "北投區 (Beitou Hot Spring)", PhotoResource = "IgniteDemo.Images.Destinations.Beitou.png" });
+			listView.ItemsSource = destinations;
 
 			Content.FindByName<Button>("btnCancel").Clicked += async (sender, e) =>
 		   {
@@ -44,23 +44,23 @@ namespace IgniteDemo
 		   };
 			Content.FindByName<Button>("btnNext").Clicked += async (sender, e) =>
 			{
-				string eventName = "Car: ";
-				Car item = (Car) listView.SelectedItem;
+				string eventName = "Destination: ";
+				Destination item = (Destination) listView.SelectedItem;
 				eventName += item.Name;
 				HockeyApp.MetricsManager.TrackEvent(eventName);
 
-				if (item.Name == "2005 Mercedes E55 AMG")
+				if (item.Name == "臺北101 (Taipei 101)")
 				{
-					DonovanWouldntDriveThat();
+					MissingImageCrash();
 				}
 
-				await Navigation.PushAsync(new HockeyQuestionPage(passBtn));
+				await Navigation.PushAsync(new IgniteDemoPage());
 			};
 		}
 
-		protected void DonovanWouldntDriveThat()
+		protected void MissingImageCrash()
 		{
-			throw new Exception("Donovan Wouldn't Drive That");
+			throw new Exception("A Missing Image Caused a Crash");
 		}
 	}
 }
