@@ -24,8 +24,8 @@ namespace IgniteDemo.Droid
 
 			global::Xamarin.Forms.Forms.Init(this, bundle);
 
-			CrashManager.Register(this, "37ba9472034144b8bfbf5bb5940391b7");
-			MetricsManager.Register(Application, "37ba9472034144b8bfbf5bb5940391b7");
+			CrashManager.Register(this, "4d994b2a8a4447698d9e8eebb3a782da");
+			MetricsManager.Register(Application, "4d994b2a8a4447698d9e8eebb3a782da");
 
 			LoadApplication(new App());
 		}

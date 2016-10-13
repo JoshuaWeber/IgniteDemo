@@ -24,7 +24,7 @@ namespace IgniteDemo.iOS
 
 
 			var manager = BITHockeyManager.SharedHockeyManager;
-			manager.Configure("fb44b2bf8fce44318d3f9ae6e6f67af9");
+			manager.Configure("f688b328d5cd47b2ba501dae06d1563c");
 			manager.StartManager();
 			//manager.Authenticator.AuthenticateInstallation(); // This line is obsolete in crash only builds
 
