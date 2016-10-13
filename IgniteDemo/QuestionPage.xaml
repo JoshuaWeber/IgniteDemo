@@ -2,14 +2,18 @@
 <ContentPage 
 		xmlns="http://xamarin.com/schemas/2014/forms" 
 		xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
-		x:Class="IgniteDemo.QuestionPage">
+		x:Class="IgniteDemo.QuestionPage"
+		Title="Question">
 	<ContentPage.Content>
-		<StackLayout BackgroundColor="#D83B01" VerticalOptions="Start">
-			<Label HeightRequest="50" Margin="0, 20" VerticalOptions="Center" HorizontalOptions="Center" TextColor="White" FontSize="22">
+		<StackLayout BackgroundColor="#D83B01">
+			<Label HeightRequest="50" Margin="0, 20"
+					VerticalOptions="Center" HorizontalOptions="Center" TextColor="White" FontSize="22">
 				Where to visit in Taipei?</Label>
-			<ListView x:Name="listView" BackgroundColor="#D83B01" VerticalOptions="FillAndExpand" RowHeight="120">
+			<ListView x:Name="listView"
+					BackgroundColor="#D83B01" 
+					RowHeight="120">
 				<ListView.ItemTemplate>
-					<DataTemplate >
+					<DataTemplate>
 						<ViewCell>
 							<StackLayout Margin="5, 5" Orientation="Horizontal" >
 								<Image Margin="15, 5" Source="{Binding PhotoSource}" WidthRequest="120" HeightRequest="120" />
@@ -19,9 +23,35 @@
 					</DataTemplate>
 				</ListView.ItemTemplate>
 			</ListView>
-			<StackLayout x:Name="stkBottom" Orientation="Horizontal" HeightRequest="50">
-				<Button x:Name="btnCancel" Margin="10, 10" WidthRequest="80" TextColor="White" HorizontalOptions="EndAndExpand" BackgroundColor="#0078d7" Text="Cancel" />
-				<Button x:Name="btnNext" Margin="10, 10" WidthRequest="80" TextColor="White" HorizontalOptions="End" BackgroundColor="#0078d7" Text="Next" />
+			<StackLayout 
+					Padding="10"
+					Spacing="10"
+					x:Name="stkBottom"
+					Orientation="Horizontal" 
+					HorizontalOptions="FillAndExpand"
+					VerticalOptions="End">
+				<StackLayout.HeightRequest>
+					<OnPlatform x:TypeArguments="x:Double" iOS="30"/>
+				</StackLayout.HeightRequest>
+				<Button x:Name="btnFeedback"
+					TextColor="White" 
+					Clicked="Handle_Clicked"
+					HorizontalOptions="StartAndExpand"
+					Text="Send Feedback">
+					<Button.IsVisible>
+						<OnPlatform x:TypeArguments="x:Boolean" Android="false" iOS="true"/>
+					</Button.IsVisible>
+				</Button>
+				<Button x:Name="btnCancel"
+					WidthRequest="80" 
+					TextColor="White" 
+					HorizontalOptions="EndAndExpand"
+					BackgroundColor="#0078d7" 
+					Text="Cancel"/>
+				<Button x:Name="btnNext"
+					WidthRequest="80" 
+					HorizontalOptions="End"
+					TextColor="White" BackgroundColor="#0078d7" Text="Next"/>
 			</StackLayout>
 		</StackLayout>
 	</ContentPage.Content>

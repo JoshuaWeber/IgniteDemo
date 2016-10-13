@@ -8,18 +8,11 @@ namespace IgniteDemo
 {
 	public partial class QuestionPage : ContentPage
 	{
-		View[] passBtn;
-
-		public QuestionPage(params View[] feedbackBtn)
+		
+		public QuestionPage()
 		{
 			InitializeComponent();
 
-			passBtn = feedbackBtn;
-
-			Device.OnPlatform(iOS: () =>
-			{
-				stkBottom.Children.Insert(0, feedbackBtn[0]);
-			});
 
 		}
 
@@ -38,11 +31,11 @@ namespace IgniteDemo
 			answers.Add(new Answer() { Name = "北投區 (Beitou Hot Spring)", PhotoResource = "IgniteDemo.Images.Destinations.Beitou.png" });
 			listView.ItemsSource = answers;
 
-			Content.FindByName<Button>("btnCancel").Clicked += async (sender, e) =>
+			btnCancel.Clicked += async (sender, e) =>
 		   {
-				await Navigation.PushAsync(new IgniteDemoPage(passBtn));
+			   await Navigation.PopAsync();
 		   };
-			Content.FindByName<Button>("btnNext").Clicked += async (sender, e) =>
+			btnNext.Clicked += async (sender, e) =>
 			{
 				string eventName = "Destination: ";
 				Answer item = (Answer) listView.SelectedItem;
@@ -56,13 +49,18 @@ namespace IgniteDemo
 					MissingImageCrash();
 				}
 
-				await Navigation.PushAsync(new IgniteDemoPage(passBtn));
+				await Navigation.PopAsync();
 			};
 		}
 
 		protected void MissingImageCrash()
 		{
 			throw new Exception("A Missing Image Caused a Crash");
+		}
+
+		void Handle_Clicked(object sender, System.EventArgs e)
+		{
+			DependencyService.Get<IHockeyAppHelpers>()?.SendFeedback();
 		}
 	}
 }

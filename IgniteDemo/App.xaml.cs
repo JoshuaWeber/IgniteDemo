@@ -4,12 +4,12 @@ namespace IgniteDemo
 {
 	public partial class App : Application
 	{
-		public App(params View[] children)
+		public App()
 		{
 			InitializeComponent();
 
 			//MainPage = new IgniteDemoPage();
-			MainPage = new NavigationPage(new IgniteDemoPage(children));
+			MainPage = new NavigationPage(new IgniteDemoPage());
 		}
 
 		protected override void OnStart()
