@@ -46,7 +46,9 @@ namespace IgniteDemo
 			{
 				string eventName = "Destination: ";
 				Answer item = (Answer) listView.SelectedItem;
-				eventName += item.Name;
+				int start_index = item.Name.IndexOf("(");
+				int stop_index = item.Name.IndexOf(")");
+				eventName += item.Name.Substring(start_index+1, stop_index-start_index-1);
 				HockeyApp.MetricsManager.TrackEvent(eventName);
 
 				if (item.Name == "臺北101 (Taipei 101)")
