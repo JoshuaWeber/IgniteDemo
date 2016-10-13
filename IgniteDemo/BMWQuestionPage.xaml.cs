@@ -54,7 +54,7 @@ namespace IgniteDemo
 					MissingImageCrash();
 				}
 
-				await Navigation.PushAsync(new IgniteDemoPage());
+				await Navigation.PushAsync(new IgniteDemoPage(passBtn));
 			};
 		}
 
