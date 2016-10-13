@@ -3,11 +3,11 @@ using Xamarin.Forms;
 
 namespace IgniteDemo
 {
-	public class Destination
+	public class Answer
 	{
 		string photoResource;
 
-		public Destination()
+		public Answer()
 		{
 		}
 

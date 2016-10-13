@@ -18,7 +18,7 @@ namespace IgniteDemo
 			TapGestureRecognizer tgr = new TapGestureRecognizer();
 			tgr.Tapped += async (sender, e) =>
 			{
-				await Navigation.PushAsync(new BMWQuestionPage(feedbackBtns));
+				await Navigation.PushAsync(new QuestionPage(feedbackBtns));
 			};
 
 			this.Content.GestureRecognizers.Add(tgr);

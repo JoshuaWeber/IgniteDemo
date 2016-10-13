@@ -30,29 +30,10 @@
   <ItemGroup>
     <EmbeddedResource Include="App.xaml" />
     <EmbeddedResource Include="IgniteDemoPage.xaml" />
-    <EmbeddedResource Include="BMWQuestionPage.xaml">
+    <EmbeddedResource Include="QuestionPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Include="Images\image_120.png" />
-    <EmbeddedResource Include="HockeyQuestionPage.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Images\Teams\Bruins.png" />
-    <EmbeddedResource Include="Images\Teams\Canadiens.png" />
-    <EmbeddedResource Include="Images\Teams\Lightning.png" />
-    <EmbeddedResource Include="Images\Teams\Maple Leafs.png" />
-    <EmbeddedResource Include="Images\Teams\Panthers.png" />
-    <EmbeddedResource Include="Images\Teams\Redwings.png" />
-    <EmbeddedResource Include="Images\Teams\Sabres.png" />
-    <EmbeddedResource Include="Images\Teams\Senators.png" />
-    <EmbeddedResource Include="Images\Cars\01_bmw_740.jpg" />
-    <EmbeddedResource Include="Images\Cars\01_bmw_m3.jpg" />
-    <EmbeddedResource Include="Images\Cars\05_bmw_k1200.jpg" />
-    <EmbeddedResource Include="Images\Cars\05_mercedes_e55.jpg" />
-    <EmbeddedResource Include="Images\Cars\06_bmw_x5.jpg" />
-    <EmbeddedResource Include="Images\Cars\1993_bmw_m5.jpg" />
-    <EmbeddedResource Include="Images\Cars\97_bmw_840.jpg" />
-    <EmbeddedResource Include="Images\Cars\97_bmw_m3.jpg" />
     <EmbeddedResource Include="Images\Destinations\Beitou.png" />
     <EmbeddedResource Include="Images\Destinations\Chiang_Kai-shek.png" />
     <EmbeddedResource Include="Images\Destinations\Elephant_Mountain.png" />
@@ -70,13 +51,10 @@
       <DependentUpon>IgniteDemoPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="BMWQuestionPage.xaml.cs">
-      <DependentUpon>BMWQuestionPage.xaml</DependentUpon>
+    <Compile Include="QuestionPage.xaml.cs">
+      <DependentUpon>QuestionPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Models\Destination.cs" />
-    <Compile Include="HockeyQuestionPage.xaml.cs">
-      <DependentUpon>HockeyQuestionPage.xaml</DependentUpon>
-    </Compile>
+    <Compile Include="Models\Answer.cs" />
     <Compile Include="Models\Team.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -99,8 +77,6 @@
   <ItemGroup>
     <Folder Include="Images\" />
     <Folder Include="Models\" />
-    <Folder Include="Images\Teams\" />
-    <Folder Include="Images\Cars\" />
     <Folder Include="Images\Destinations\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
