@@ -8,7 +8,7 @@
 		<StackLayout BackgroundColor="#D83B01">
 			<Label HeightRequest="50" Margin="0, 20"
 					VerticalOptions="Center" HorizontalOptions="Center" TextColor="White" FontSize="22">
-				Where to visit in Taipei?</Label>
+				Who is the best 2016 NHL Rookie?</Label>
 			<ListView x:Name="listView"
 					BackgroundColor="#D83B01" 
 					RowHeight="120">

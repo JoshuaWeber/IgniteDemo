@@ -21,14 +21,14 @@ namespace IgniteDemo
 			base.OnAppearing();
 
 			var answers = new List<Answer>();
-			answers.Add(new Answer() { Name = "象山 (Elephant Mountain)", PhotoResource="IgniteDemo.Images.Destinations.Elephant_Mountain.png" });
-			answers.Add(new Answer() { Name = "貓空纜車 (Maokong Gondola)", PhotoResource = "IgniteDemo.Images.Destinations.Maokong.png" });
-			answers.Add(new Answer() { Name = "艋舺龍山寺 (Lungshan Temple)", PhotoResource = "IgniteDemo.Images.Destinations.Lungshan.png" });
-			answers.Add(new Answer() { Name = "中正紀念堂 (Chiang Kai-shek Memorial Hall)", PhotoResource = "IgniteDemo.Images.Destinations.Chiang_Kai-shek.png" });
-			answers.Add(new Answer() { Name = "國立故宮博物院 (National Palace Museum)", PhotoResource = "IgniteDemo.Images.Destinations.National_Palace.png" });
-			answers.Add(new Answer() { Name = "臺北101 (Taipei 101)", PhotoResource = "IgniteDemo.Images.Taipei_101.png" });
-			answers.Add(new Answer() { Name = "臺北市立動物園 (Taipei Zoo)", PhotoResource = "IgniteDemo.Images.Destinations.Taipei_Zoo.png" });
-			answers.Add(new Answer() { Name = "北投區 (Beitou Hot Spring)", PhotoResource = "IgniteDemo.Images.Destinations.Beitou.png" });
+			answers.Add(new Answer() { Name = "Anthony Beauvillier", PhotoResource="IgniteDemo.Images.Rookies.Anthony_Beauvillier_r.png" });
+			answers.Add(new Answer() { Name = "Auston Matthews", PhotoResource = "IgniteDemo.Images.Rookies.Auston_Matthews_r.png" });
+			answers.Add(new Answer() { Name = "Devin Shore", PhotoResource = "IgniteDemo.Images.Rookies.Devin_Shore_r.png" });
+			answers.Add(new Answer() { Name = "Jimmy Vesey", PhotoResource = "IgniteDemo.Images.Rookies.Jimmy_Vesey_r.png" });
+			answers.Add(new Answer() { Name = "Patrik Laine", PhotoResource = "IgniteDemo.Images.Rookies.Patrik_Laine_r.png" });
+			answers.Add(new Answer() { Name = "Travis Konecny", PhotoResource = "IgniteDemo.Images.Rookies.Travis_Konecny_r.png" });
+			answers.Add(new Answer() { Name = "William Nylander", PhotoResource = "IgniteDemo.Images.Rookies.William_Nylander_r.png" });
+			answers.Add(new Answer() { Name = "Zach Werenski", PhotoResource = "IgniteDemo.Images.Rookies.Zach_Werenski_r.png" });
 			listView.ItemsSource = answers;
 
 			btnCancel.Clicked += async (sender, e) =>
@@ -37,25 +37,23 @@ namespace IgniteDemo
 		   };
 			btnNext.Clicked += async (sender, e) =>
 			{
-				string eventName = "Destination: ";
+				string eventName = "Rookie: ";
 				Answer item = (Answer) listView.SelectedItem;
-				int start_index = item.Name.IndexOf("(");
-				int stop_index = item.Name.IndexOf(")");
-				eventName += item.Name.Substring(start_index+1, stop_index-start_index-1);
+				eventName += item.Name;
 				HockeyApp.MetricsManager.TrackEvent(eventName);
 
-				if (item.Name == "臺北101 (Taipei 101)")
+				if (item.Name != "Auston Matthews" && item.Name != "William Nylander")
 				{
-					MissingImageCrash();
+					TorontoRookies();
 				}
 
 				await Navigation.PopAsync();
 			};
 		}
 
-		protected void MissingImageCrash()
+		protected void TorontoRookies()
 		{
-			throw new Exception("A Missing Image Caused a Crash");
+			throw new Exception("Only has support for Toronto Maple Leafs Rookies");
 		}
 
 		void Handle_Clicked(object sender, System.EventArgs e)

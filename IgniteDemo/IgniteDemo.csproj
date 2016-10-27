@@ -34,14 +34,14 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Include="Images\image_120.png" />
-    <EmbeddedResource Include="Images\Destinations\Beitou.png" />
-    <EmbeddedResource Include="Images\Destinations\Chiang_Kai-shek.png" />
-    <EmbeddedResource Include="Images\Destinations\Elephant_Mountain.png" />
-    <EmbeddedResource Include="Images\Destinations\Lungshan.png" />
-    <EmbeddedResource Include="Images\Destinations\Maokong.png" />
-    <EmbeddedResource Include="Images\Destinations\National_Palace.png" />
-    <EmbeddedResource Include="Images\Destinations\Taipei_101.png" />
-    <EmbeddedResource Include="Images\Destinations\Taipei_Zoo.png" />
+    <EmbeddedResource Include="Images\Rookies\Anthony_Beauvillier_r.png" />
+    <EmbeddedResource Include="Images\Rookies\Auston_Matthews_r.png" />
+    <EmbeddedResource Include="Images\Rookies\Devin_Shore_r.png" />
+    <EmbeddedResource Include="Images\Rookies\Jimmy_Vesey_r.png" />
+    <EmbeddedResource Include="Images\Rookies\Patrik_Laine_r.png" />
+    <EmbeddedResource Include="Images\Rookies\Travis_Konecny_r.png" />
+    <EmbeddedResource Include="Images\Rookies\William_Nylander_r.png" />
+    <EmbeddedResource Include="Images\Rookies\Zach_Werenski_r.png" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App.xaml.cs">
@@ -78,8 +78,8 @@
   <ItemGroup>
     <Folder Include="Images\" />
     <Folder Include="Models\" />
-    <Folder Include="Images\Destinations\" />
     <Folder Include="Helpers\" />
+    <Folder Include="Images\Rookies\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Import Project="..\packages\Xamarin.Forms.2.3.1.114\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.2.3.1.114\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets')" />
